@@ -1,0 +1,16 @@
+
+
+<% if @destinations.any? %>
+  <ul>
+  <% @destinations.each do |destination| %>
+    <li>
+      Country: <%= destination["country"] %> <br>
+      City: <%= destination["city"]%>
+    </li>
+  <% end %>
+  </ul>
+<% else %>
+There are no destinations
+<% end %>
+
+<%= link_to "Create", requests_path, method: :post %>
