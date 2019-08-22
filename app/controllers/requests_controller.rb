@@ -6,6 +6,7 @@ class RequestsController < ApplicationController
     headers: {authorization: params[:token]}
     )
 
+
     @destinations = JSON.parse(response)
 
   end
@@ -14,6 +15,8 @@ class RequestsController < ApplicationController
     RestClient.post 'localhost:3000/v1/destinations', {city: 'Moonspawn', country: 'Universe'}
     redirect_to requests_path
   end
+
+
 
 
 end
